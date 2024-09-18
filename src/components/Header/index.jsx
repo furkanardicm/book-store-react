@@ -8,7 +8,7 @@ function index() {
   return (
     <>
     <nav className="w-screen h-16 bg-[#FAFAFA] relative px-6 flex justify-between font-medium text-base items-center font-lalezar antialiased">
-            <div className="h-full flex items-center"><img className='h-[50px]' src="/public/black-logo.png" alt="" srcset="" /></div>
+            <div className="h-full flex items-center"><img className='h-[50px]' src="/black-logo.png" alt="" srcset="" /></div>
             
             <div className="w-[354px] h-11 flex items-center rounded-sm">
                 <input className='antialiased outline-none h-full bg-white w-[310px] border border-r-0 border-[#B5B5B5] px-3 text-base  rounded-s-md' placeholder='Search by Title, Author, Keyword or ISBN' type="text" />
@@ -26,7 +26,7 @@ function index() {
                 {
                   isLoggedIn ? 
                   <button onClick={() => setClickedUserModal(!clickedUserModal)} className='gap-4 flex items-center px-8 text-black hover:text-[#1F4A50] border-2 border-[#0A090C] hover:border-[#0A090C] rounded-xl py-1 transition-colors duration-500 relative' type="button">
-                    <img className='w-[39px] h-[39px] bg-gray-500 absolute -left-5 rounded-full border border-[#0A090C]' src="/public/pp.png" alt="" />
+                    <img className='w-[39px] h-[39px] bg-gray-500 absolute -left-5 rounded-full border border-[#0A090C]' src="/pp.png" alt="" />
                       <span className='text-base'>Username</span>
                       <FontAwesomeIcon className={ clickedUserModal ? 'absolute right-2 -rotate-180 transition-all duration-500' : 'absolute right-2 transition-all duration-500'} icon={faAngleDown} />
                   </button> 
