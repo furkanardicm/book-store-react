@@ -8,7 +8,7 @@ function index() {
   return (
     <>
     <nav className="w-screen h-16 bg-[#FAFAFA] relative px-6 flex justify-between font-medium text-base items-center font-lalezar antialiased">
-            <div className="h-full flex items-center"><img className='h-[50px]' src="/black-logo.png" alt="" srcset="" /></div>
+            <div className="h-full flex items-center"><a href="/"><img className='h-[50px]' src="/black-logo.png" alt="" srcset="" /></a></div>
             
             <div className="w-[354px] h-11 flex items-center rounded-sm">
                 <input className='antialiased outline-none h-full bg-white w-[310px] border border-r-0 border-[#B5B5B5] px-3 text-base  rounded-s-md' placeholder='Search by Title, Author, Keyword or ISBN' type="text" />
