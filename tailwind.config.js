@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         lalezar: ['Lalezar', 'cursive'],
       },
+      backgroundImage: {
+        'hero-pattern': "url('/bg-light.png')",
+      }
     },
   },
   plugins: [],
