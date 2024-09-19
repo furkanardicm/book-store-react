@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faAngleDown, faCartShopping, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faAngleDown, faCartShopping, faCheck, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../Modal'
 
 function index() {
@@ -8,8 +8,9 @@ function index() {
   const [clickedUserModal, setClickedUserModal] = useState(0);
   const [clickedColorModal, setClickedColorModal] = useState(0);
   const boyuts = [40, 130, 200, 290, 370]
-  const [selectedCircle, setSelectedCircle] = useState(0);
+  const [selectedCircle, setSelectedCircle] = useState(1);
   const [selectedColor, setSelectedColor] = useState(1);
+  const [isLightMode, setIsLightMode] = useState(1);
   const colorList = [
     "#DD6B20", // orange-600
     "#0C4A6E", // sky-900
@@ -71,71 +72,35 @@ function index() {
         <Modal className={`${clickedColorModal ? 'visible z-30' : 'invisible'}`} width={'454px'} height={'283px'} primaryColor={'FFFFFF'} secondaryColor={'000'} border={"border"} borderColor={'ABABAB'} textColor={'black'} isOpen={clickedColorModal} >
           <div className="w-full h-[57px] flex flex-col px-6 mt-4  bg-white rounded-t-md gap-3">
             <span>Yazı Tipi Boyutu</span>
-            <div
-  style={{ backgroundColor: `${secondaryColorList[selectedColor]}` }}
-  className="w-full h-1 relative items-center flex"
->
-  <div
-    style={{ width: `${boyuts[selectedCircle]}px`, backgroundColor: `${colorList[selectedColor]}` }}
-    className="absolute h-1"
-  ></div>
-  <div className="flex flex-row absolute items-center justify-around w-full -top-2">
-    <button
-      onClick={() => setSelectedCircle(0)}
-      style={{
-        backgroundColor: selectedCircle >= 0 ? colorList[selectedColor] : secondaryColorList[selectedColor],
-      }}
-      className="w-5 h-5 rounded-full"
-    ></button>
-    <button
-      onClick={() => setSelectedCircle(1)}
-      style={{
-        backgroundColor: selectedCircle >= 1 ? colorList[selectedColor] : secondaryColorList[selectedColor],
-      }}
-      className="w-5 h-5 rounded-full"
-    ></button>
-    <button
-      onClick={() => setSelectedCircle(2)}
-      style={{
-        backgroundColor: selectedCircle >= 2 ? colorList[selectedColor] : secondaryColorList[selectedColor],
-      }}
-      className="w-5 h-5 rounded-full"
-    ></button>
-    <button
-      onClick={() => setSelectedCircle(3)}
-      style={{
-        backgroundColor: selectedCircle >= 3 ? colorList[selectedColor] : secondaryColorList[selectedColor],
-      }}
-      className="w-5 h-5 rounded-full"
-    ></button>
-    <button
-      onClick={() => setSelectedCircle(4)}
-      style={{
-        backgroundColor: selectedCircle >= 4 ? colorList[selectedColor] : secondaryColorList[selectedColor],
-      }}
-      className="w-5 h-5 rounded-full"
-    ></button>
-  </div>
-</div>
+            <div style={{ backgroundColor: `${secondaryColorList[selectedColor]}` }} className="w-full h-1 relative items-center flex">
+              <div style={{ width: `${boyuts[selectedCircle]}px`, backgroundColor: `${colorList[selectedColor]}`}} className="absolute h-1"></div>
+              <div className="flex flex-row absolute items-center justify-around w-full -top-2">
+                <button onClick={() => setSelectedCircle(0)} style={{ backgroundColor: selectedCircle >= 0 ? colorList[selectedColor] : secondaryColorList[selectedColor],}} className="w-5 h-5 rounded-full"></button>
+                <button onClick={() => setSelectedCircle(1)} style={{backgroundColor: selectedCircle >= 1 ? colorList[selectedColor] : secondaryColorList[selectedColor],}} className="w-5 h-5 rounded-full"></button>
+                <button onClick={() => setSelectedCircle(2)} style={{backgroundColor: selectedCircle >= 2 ? colorList[selectedColor] : secondaryColorList[selectedColor],}} className="w-5 h-5 rounded-full"></button>
+                <button onClick={() => setSelectedCircle(3)} style={{backgroundColor: selectedCircle >= 3 ? colorList[selectedColor] : secondaryColorList[selectedColor],}} className="w-5 h-5 rounded-full"></button>
+                <button onClick={() => setSelectedCircle(4)} style={{backgroundColor: selectedCircle >= 4 ? colorList[selectedColor] : secondaryColorList[selectedColor],}} className="w-5 h-5 rounded-full"></button>
+              </div>
+            </div>
 
           </div>
           <hr className='w-[405px] mt-4 bg-[#CCCCCC] h-[2px]' />
-          <div className="w-full h-[57px] flex flex-col px-6 py-4 bg-white rounded-t-md mt-2">
+          <div className="w-full h-[57px] flex flex-col px-6 py-4 bg-white rounded-t-md mt-0">
             <span>Renk</span>
             <div className="w-[400px] h-[43px] relative items-center flex justify-between">
-              <button onClick={() => setSelectedColor(0)} style={{backgroundColor: `${colorList[0]}`}} className='w-9 h-9 border bg-orange-600 drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${selectedColor === 0 ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
-              <button onClick={() => setSelectedColor(1)} style={{backgroundColor: `${colorList[1]}`}} className='w-9 h-9 border bg-sky-900 drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${selectedColor === 1 ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
-              <button onClick={() => setSelectedColor(2)} style={{backgroundColor: `${colorList[2]}`}} className='w-9 h-9 border bg-green-900 drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${selectedColor === 2 ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
-              <button onClick={() => setSelectedColor(3)} style={{backgroundColor: `${colorList[3]}`}} className={`w-9 h-9 border drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center`}><FontAwesomeIcon className={`${selectedColor === 3 ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
-              <button onClick={() => setSelectedColor(4)} style={{backgroundColor: `${colorList[4]}`}} className='w-9 h-9 border bg-purple-900 drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${selectedColor === 4 ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
+              <button onClick={() => setSelectedColor(0)} style={{backgroundColor: `${colorList[0]}`}} className='w-9 h-9 border drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${(selectedColor === 0 && clickedColorModal) ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
+              <button onClick={() => setSelectedColor(1)} style={{backgroundColor: `${colorList[1]}`}} className='w-9 h-9 border drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${(selectedColor === 1 && clickedColorModal) ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
+              <button onClick={() => setSelectedColor(2)} style={{backgroundColor: `${colorList[2]}`}} className='w-9 h-9 border drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${(selectedColor === 2 && clickedColorModal) ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
+              <button onClick={() => setSelectedColor(3)} style={{backgroundColor: `${colorList[3]}`}} className={`w-9 h-9 border drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center`}><FontAwesomeIcon className={`${(selectedColor === 3 && clickedColorModal) ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
+              <button onClick={() => setSelectedColor(4)} style={{backgroundColor: `${colorList[4]}`}} className='w-9 h-9 borderdrop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${(selectedColor === 4 && clickedColorModal) ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
             </div>
           </div>
           <hr className='w-[405px] mt-9 bg-[#CCCCCC] h-[2px]' />
           <div className="w-full h-[57px] flex flex-col px-6 py-4 bg-white rounded-t-md">
             <span>Tema</span>
-            <div className="w-[400px] h-[43px] relative items-center flex justify-around gap-3">
-              <button>Light Mode</button>
-              <button>Dark Mode</button>
+            <div className="w-[400px] h-[43px] relative items-center flex justify-around gap-3 px-4">
+              <button onClick={() => setIsLightMode(1)} className={`w-[150px] h-[35px] bg-white border-2 border-black rounded-md flex items-center justify-around px-3 ${isLightMode ? 'shadow-[0_0_25px_5px_#F1C644]' : 'drop-shadow-md'}`}><span>Light Mode</span><FontAwesomeIcon className='text-[#F1C644]' icon={faSun} /></button>
+              <button onClick={() => setIsLightMode(0)} className={`w-[150px] h-[35px] bg-black text-white border-2 border-[#383838] rounded-md flex items-center justify-around px-3 ${!isLightMode ? 'shadow-[0_0_25px_5px_#F1C644]' : 'drop-shadow-md'}`}><span>Dark Mode</span><FontAwesomeIcon icon={faMoon} /></button>
             </div>
           </div>
           
