@@ -13,7 +13,29 @@ export default {
       },
       backgroundImage: {
         'hero-pattern': "url('/bg-light.png')",
-      }
+      },
+      colors: {
+        blueTheme: {
+          primary: '#DD6B20', 
+          secondary: '#FB923C',
+        },
+        yellowTheme: {
+          primary: '#0C4A6E',
+          secondary: '#38BDF8',
+        },
+        greenTheme: {
+          primary: '#14532D',
+          secondary: '#4ADE80',
+        },
+        purpleTheme: {
+          primary: '#d5a201',
+          secondary: '#FCD34D',
+        },
+        orangeTheme: {
+          primary: '#4C1D95',
+          secondary: '#A855F7',
+        },
+      },
     },
   },
   plugins: [
