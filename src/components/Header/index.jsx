@@ -14,7 +14,7 @@ function index() {
   const styleTheme =  {backgroundColor: theme.primary}
   return (
     <>
-      <nav className="w-screen h-16 bg-[#FAFAFA] relative px-6 flex justify-between font-medium text-base items-center font-lalezar antialiased">
+      <nav className="text-nowrap w-screen h-16 bg-[#FAFAFA] relative px-6 flex justify-between font-medium text-base items-center font-lalezar antialiased">
           <div className="h-full flex items-center"><a href="/"><img className='h-[50px]' src="/black-logo.png" alt="LOGO - kitapcim.io" srcset="" /></a></div>
       
           <div className="w-[354px] h-11 flex items-center rounded-sm">
