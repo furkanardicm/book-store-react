@@ -15,7 +15,7 @@ function index() {
   return (
     <>
       <nav className="w-screen h-16 bg-[#FAFAFA] relative px-6 flex justify-between font-medium text-base items-center font-lalezar antialiased">
-          <div className="h-full flex items-center"><a href="/"><img className='h-[50px]' src="/black-logo.png" alt="" srcset="" /></a></div>
+          <div className="h-full flex items-center"><a href="/"><img className='h-[50px]' src="/black-logo.png" alt="LOGO - kitapcim.io" srcset="" /></a></div>
       
           <div className="w-[354px] h-11 flex items-center rounded-sm">
               <input className='antialiased outline-none h-full bg-white w-[310px] border border-r-0 border-[#B5B5B5] px-3 text-base  rounded-s-md' placeholder='Search by Title, Author, Keyword or ISBN' type="text" />
@@ -39,7 +39,7 @@ function index() {
                       <FontAwesomeIcon className={ clickedUserModal ? 'absolute right-2 -rotate-180 transition-all duration-500' : 'absolute right-2 transition-all duration-500'} icon={faAngleDown} />
                   </button>
                   
-                  <Popover className={`${clickedUserModal ? 'visible opacity-100' : 'invisible opacity-0'} drop-shadow-md flex flex-col items-center transition-all duration-300 ease-out absolute w-[219px] h-[261px] bg-[#FFFFFF] top-12 right-0 border border-[#CCCCCC] text-black`}>
+                  <Popover className={`${clickedUserModal ? 'visible opacity-100' : 'invisible opacity-0'} drop-shadow-md flex flex-col items-center transition-all duration-300 ease-out absolute w-[219px] h-[261px] bg-[#FFFFFF] top-14 right-0 border border-[#CCCCCC] text-black`}>
                     <PopoverButton className="w-full h-[35px] bg-white border-b border-[#CCCCCC] rounded-t-[4px] hover:text-[#616161] text-start px-2">Kullanıcı Ayarları</PopoverButton>
                     <PopoverButton onClick={() => setClickedColorModal(!clickedColorModal)} className= {`${clickedColorModal ? 'text-[#285f66]': 'text-black'} mt-1 w-full h-[35px] bg-white border-b border-[#CCCCCC] hover:text-[#616161] text-start px-2`}>Görüntü Ayarları</PopoverButton>
                     <PopoverButton className="mt-1 w-full h-[35px] bg-white border-b border-[#CCCCCC] hover:text-[#616161] text-start px-2">Sipariş Geçmişi</PopoverButton>
