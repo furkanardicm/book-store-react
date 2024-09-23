@@ -24,10 +24,10 @@ function index() {
           
           <div className="float-right flex items-center gap-6">
               <ul className='flex items-center gap-6 '>
-                  <li className={`hover:text-black/55 transition-colors duration-500`}><a href="">Shop</a></li>
-                  <li className='hover:text-black/55 transition-colors duration-500'><a href="">Categories</a></li>
-                  <li className='hover:text-black/55 transition-colors duration-500'><a href="">My Favorities</a></li>
-                  <li className='hover:text-black/55 transition-colors duration-500 flex items-center justify-center'><a className='flex items-center justify-center' href=""><FontAwesomeIcon icon={faCartShopping} /></a></li>
+                  <div className="flex flex-row items-center justify-center relative"><li className={`hover:text-black/55 transition-colors duration-500`}><a href="">Shop</a></li></div>
+                  <div className="flex flex-row items-center justify-center relative"><li className='hover:text-black/55 transition-colors duration-500'><a href="">Categories</a></li></div>
+                  <div className="flex flex-row items-center justify-center relative"><li className='hover:text-black/55 transition-colors duration-500'><a href="">My Favorities</a></li><span className='absolute -top-2 -right-4 bg-red-600 text-white text-xs w-5 h-5 flex justify-center items-center rounded-full cursor-default'>2</span></div>
+                  <div className="flex flex-row items-center justify-center relative"><li className='hover:text-black/55 transition-colors duration-500 flex items-center justify-center'><a className='flex items-center justify-center z-20' href=""><FontAwesomeIcon icon={faCartShopping} /></a></li><span className='absolute -top-3 -right-4 bg-red-600 text-white text-xs w-5 h-5 flex justify-center items-center rounded-full cursor-default'>5</span></div>
               </ul>
               <button className='px-6 text-[#CC0E0E] hover:text-[#CC0E0E] border-2 border-[#CC0E0E] hover:border-[#832c2c] rounded-sm py-1 transition-colors duration-500' type="button">Satış Yap</button> 
               {
