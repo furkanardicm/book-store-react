@@ -42,7 +42,7 @@ export default function index({ clickedColorModal, setClickedColorModal }) {
   return (
     <Modal isOpen={clickedColorModal} onClose={!clickedColorModal} >
         <button onClick={() => setClickedColorModal(0)} className="z-20 absolute top-4 right-5 text-red-600 flex items-center justify-center text-3xl hover:text-red-700"><FontAwesomeIcon icon={faXmark} /></button>
-        <div className="w-[454px] h-[57px] flex flex-col px-6 mt-1  bg-white rounded-t-md gap-3 transform scale-90 md:scale-100 lg:scale-100" >
+        <div className="w-[454px] h-[57px] flex flex-col px-6 mt-1  bg-white rounded-t-md gap-3 transform max-sm:scale-90 max-xs:scale-75 sm:scale-90 md:scale-100 lg:scale-100" >
           <span className="font-extrabold z-10" >Yazı Tipi Boyutu</span>
           <div style={{ backgroundColor: `${secondaryColorList[selectedColor]}` }} className="w-full h-1 relative items-center flex my-2 max-sm:scale-80">
               <div style={{ width: `${boyuts[selectedCircle]}px`, backgroundColor: `${colorList[selectedColor]}`}} className="absolute h-1"></div>
@@ -58,7 +58,7 @@ export default function index({ clickedColorModal, setClickedColorModal }) {
 
         <hr className='w-[405px] mt-4 bg-[#CCCCCC] h-[2px] mx-auto' />
         
-        <div className="w-full h-[57px] flex flex-col px-6 py-4 bg-white rounded-t-md mt-0 scale-90 md:scale-100 lg:scale-100">
+        <div className="w-full h-[57px] flex flex-col px-6 py-4 bg-white rounded-t-md mt-0 max-sm:scale-90 max-xs:scale-75 sm:scale-90 md:scale-100 lg:scale-100">
         <span classname="font-extrabold z-10" >Renk</span>
         <div className="w-[400px] h-[43px] relative items-center flex justify-between my-2 ">
             <button onClick={() => handleCircleClick(0, "orangeTheme")} style={{backgroundColor: `${colorList[0]}`}} className='w-9 h-9 border drop-shadow-md border-[#9E9E9E] rounded-full flex items-center justify-center'><FontAwesomeIcon className={`${(selectedColor === 0 && clickedColorModal) ? 'visible text-white' : 'invisible'}`} icon={faCheck} /></button>
@@ -69,7 +69,7 @@ export default function index({ clickedColorModal, setClickedColorModal }) {
         </div>
         </div>
         <hr className='w-[405px] mt-9 bg-[#CCCCCC] h-[2px] mx-auto' />
-        <div className="w-full h-[57px] flex flex-col px-6 py-4 bg-white rounded-t-md scale-90 md:scale-100 lg:scale-100">
+        <div className="w-full h-[57px] flex flex-col px-6 py-4 bg-white rounded-t-md max-sm:scale-90 max-xs:scale-75 sm:scale-90 md:scale-100 lg:scale-100">
         <span classname="font-extrabold z-10" >Tema</span>
         <div className="w-[400px] h-[43px] relative items-center flex justify-around gap-3 px-4 my-2">
             <button onClick={() => setIsLightMode(1)} className={`w-[150px] h-[35px] bg-white border-2 border-black rounded-md flex items-center justify-around px-3 ${isLightMode ? 'shadow-[0_0_25px_5px_#F1C644]' : 'drop-shadow-md'}`}><span>Light Mode</span><FontAwesomeIcon className='text-[#F1C644]' icon={faSun} /></button>

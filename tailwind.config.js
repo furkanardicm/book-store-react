@@ -36,6 +36,9 @@ export default {
           secondary: '#A855F7',
         },
       },
+      screens: {
+        'xs': '480px',
+      },
     },
   },
   plugins: [
