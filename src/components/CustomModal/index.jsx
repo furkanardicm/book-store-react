@@ -5,7 +5,7 @@ function CustomModal({ isOpen, onClose, children, size = "xl" }) {
   
   return (
     <Modal show={isOpen} onClose={onClose} closable={true} backdrop={"dynamic"} size={`${size}`} position="center">
-      <div className="grid place-items-center font-bold">
+      <div className="grid place-items-center font-bold overflow-hidden">
         <Modal.Body>
         {children}
       </Modal.Body>
